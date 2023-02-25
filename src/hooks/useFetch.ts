@@ -4,7 +4,7 @@ import { FetchReturns, FetchMethod } from '../models';
 const DEFAULT_DATA = {};
 const DEFAULT_OPTIONS: RequestInit = {};
 const DEFAULT_HEADERS: HeadersInit = { 'Content-Type': 'application/json' };
-const BASE_API = process.env.REACT_APP_BASE_API || 'http://localhost:3000';
+// const BASE_API = process.env.REACT_APP_BASE_API || 'http://localhost:3000';
 
 export const api = async <T>(
   method: FetchMethod,
@@ -15,7 +15,7 @@ export const api = async <T>(
 ): Promise<FetchReturns<T>> => {
   try {
     const body = method === 'GET' ? undefined : JSON.stringify(data);
-    const res = await window.fetch(`${BASE_API}/${route}`, {
+    const res = await window.fetch(`${process.env.REACT_APP_BASE_API}/${route}`, {
       ...options,
       method,
       headers,
