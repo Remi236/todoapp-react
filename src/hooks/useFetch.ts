@@ -4,7 +4,7 @@ import { FetchReturns, FetchMethod } from '../models';
 const DEFAULT_DATA = {};
 const DEFAULT_OPTIONS: RequestInit = {};
 const DEFAULT_HEADERS: HeadersInit = { 'Content-Type': 'application/json' };
-const BASE_API = process.env.BASE_API || 'http://localhost:3000';
+const BASE_API = process.env.REACT_APP_BASE_API || 'http://localhost:3000';
 
 export const api = async <T>(
   method: FetchMethod,
